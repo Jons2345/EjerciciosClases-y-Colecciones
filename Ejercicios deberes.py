@@ -131,7 +131,6 @@ class AnalizadorNumeros:
         return self.resultado
  
     def cantidad_pares_impares(self):
-        
         cant_par = len(self.resultado['pares'])
         cant_impar = len(self.resultado['impares'])
         return (cant_par, cant_impar) 
@@ -145,57 +144,137 @@ print(resul.cantidad_pares_impares())
 # (2) tenga método minima()`, `maxima()`, `promedio() que calculen estadísticas; 
 # (3) tenga método registrar_multiples(*temps) que reutilice el registro para varias temperaturas.
 
+class GestorTemperatura:
+	def __init__(self):
+		self.temperaturas = []
+
+	def registrar_temperatura(self, temp):
+		self.temperaturas.append(temp)
+
+	def minima(self):
+		return min(self.temperaturas) if self.temperaturas else None
+
+	def maxima(self):
+		return max(self.temperaturas) if self.temperaturas else None
+
+	def promedio(self):
+		if not self.temperaturas:
+			return None
+		return sum(self.temperaturas) / len(self.temperaturas)
+
+	def registrar_multiples(self, *temps):
+		for temp in temps:
+			self.registrar_temperatura(temp)
+        
+temps = GestorTemperatura()
+temps.registrar_multiples(20,30, 40)
+print(temps.promedio())
 
 # Clase GestorPersonas que: (1) tenga método agregar_persona(nombre, edad) que guarde en un diccionario;
 # (2) tenga método personas_mayores(edad_minima) que retorne una lista de nombres cuya edad sea ≥;
 # (3) tenga método edad_promedio() que retorne el promedio de edades.
 
+class GestorPersonas:
+	def __init__(self):
+		self.personas = {}
 
+	def agregar_persona(self, nombre, edad):
+		self.personas[nombre] = edad
+
+	def personas_mayores(self, edad_minima):
+		return [
+			nombre
+			for nombre, edad in self.personas.items()
+			if edad >= edad_minima
+		]
+
+	def edad_promedio(self):
+		if not self.personas:
+			return None
+		return sum(self.personas.values()) / len(self.personas)
+
+gp = GestorPersonas()
+gp.agregar_persona("Ana", 30)
+gp.agregar_persona("Bob", 17)
+print(gp.personas_mayores(18))
 
 # Clase Equipos que: (1) tenga método crear_equipo(nombre_equipo) que inicie un equipo como una lista vacía en un diccionario; 
 # (2) tenga método agregar_jugador(equipo, jugador) que añada el jugador al equipo;
 # (3) tenga método equipo_mayor_integrantes() que retorne el nombre del equipo con más jugadores.
 
+class Equipos:
+	def __init__(self):
+		self.equipos = {}
 
+	def crear_equipo(self, nombre_equipo):
+		self.equipos[nombre_equipo] = []
+
+	def agregar_jugador(self, equipo, jugador):
+		self.equipos[equipo].append(jugador)
+
+	def equipo_mayor_integrantes(self):
+		if not self.equipos:
+			return None
+		return max(self.equipos, key=lambda equipo: len(self.equipos[equipo]))
+
+eq = Equipos()
+eq.crear_equipo("A")
+eq.agregar_jugador("A","Juan")
+eq.agregar_jugador("A","Pedro")
 
 # Clase AnalizadorString que: (1) tenga método solo_vocales(letra) que retorne True si es vocal;
 # (2) tenga método contar_por_tipo(texto) que retorne un diccionario 
 # {'vocales': cant, 'consonantes': cant, 'digitos': cant} reutilizando métodos; 
 # (3) tenga atributo que guarde el texto más largo analizado.
+class AnalizadorString:
+	def __init__(self):
+		self.texto_mas_largo = ''
 
+	def solo_vocales(self, letra):
+		return letra.lower() in 'aeiou'
 
+	def contar_por_tipo(self, texto):
+		if len(texto) > len(self.texto_mas_largo):
+			self.texto_mas_largo = texto
+
+		conteo = {'vocales': 0, 'consonantes': 0, 'digitos': 0}
+		for caracter in texto:
+			if caracter.isdigit():
+				conteo['digitos'] += 1
+			elif caracter.isalpha():
+				if self.solo_vocales(caracter):
+					conteo['vocales'] += 1
+				else:
+					conteo['consonantes'] += 1
+		return conteo
+
+astr = AnalizadorString()
+astr.contar_por_tipo("Hola123")
 
 # Clase Tareas que: (1) tenga método agregar_tarea(descripcion, prioridad) que guarde en una lista de tuplas (descripción, prioridad); 
 # (2) tenga método tareas_prioritarias() que retorne solo las de prioridad alta;
 # (3) tenga método eliminar_completada(descripcion) que borre la tarea de la lista.
+class Tareas:
+	def __init__(self):
+		self.tareas = []
 
+	def agregar_tarea(self, descripcion, prioridad):
+		self.tareas.append((descripcion, prioridad))
 
+	def tareas_prioritarias(self):
+		return [
+			tarea for tarea in self.tareas
+			if tarea[1].lower() == 'alta'
+		]
 
+	def eliminar_completada(self, descripcion):
+		self.tareas = [
+			tarea for tarea in self.tareas
+			if tarea[0] != descripcion
+		]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+t = Tareas()
+t.agregar_tarea("Estudiar", "alta")
+t.agregar_tarea("Leer", "baja")
+t.tareas_prioritarias()
 
