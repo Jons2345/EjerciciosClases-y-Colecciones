@@ -1,96 +1,31 @@
-# Clase Calificador que: (1) tenga método validar_nota(nota) que retorne True si 0 ≤ nota ≤ 100,
-# False en caso contrario; (2) tenga método cargar_notas(*args) que reciba múltiples notas, 
-# las valide, agregue solo las válidas a una lista interna, y retorne esa lista; 
-# (3) tenga método promedio() que retorne el promedio de notas almacenadas.
 
-
-class Calificador:
-    def __init__(self):
-        self.notas = []
-    
-    def validar_nota(self, nota):
-        if nota >= 0 and  nota <= 100:
-            return True
-        else:
-            return False
-        # return 0 ≤ nota ≤ 100
-        
-    def cargar_notas(self, *args):
-        for nota in args:
-            if self.validar_nota(nota):
-                self.notas.append(nota)
-        return self.notas
-    
-    def promedio(self):
-        return sum(self.notas)/len(self.notas)
-
-Calificacion = Calificador()
-print(Calificacion.cargar_notas(80, 50, 60))
-print (Calificacion.promedio())
-
-
-# Clase AnalizadorTexto que: (1) tenga método agregar_palabra(palabra) que agregue la 
-# palabra a un conjunto (para evitar duplicados) y a una lista (para el orden); 
-# (2) tenga método contar_palabras() que retorne cuántas palabras únicas hay; 
-# (3) tenga método agregar_multiples(*args) que reutilice agregar_palabra para varios.
-
-
-class AnalizadorTexto:
-    def __init__(self):
-        self.palabras = set()
-        self.lista = []
-        
-    def agregar_palabra(self, palabra):
-        if palabra not in self.palabras:
-            self.palabras.add(palabra)
-            self.lista.append(palabra)
-
-    def contar_palabras(self):
-        return len(self.palabras)
-
-    def agregar_multiples(self, *args):
-        for palabra in args:
-            self.agregar_palabra(palabra)
-
-pal = AnalizadorTexto()
-pal.agregar_multiples("joel", "ana", "joel")
-print(pal.lista)
-print(pal.contar_palabras())
-
-
-
-# Clase CarroCompras que: (1) tenga método agregar_articulo(nombre, precio) que guarde en un diccionario {nombre: precio}; 
-# (2) tenga método total_carrito() que retorne la suma de todos los precios; 
-# (3) tenga método articulos_por_rango(precio_min, precio_max) que retorne una lista con artículos dentro del rango.
-
-
-class CarroCompras:
-    def __init__(self):
-        self.articulos = {}
-    
-    def agregar_articulo(self, nombre, precio):
-        self.articulos[nombre] = precio
-        
-    def total_carrito(self):
-        return sum(self.articulos.values())
-    
-    def articulos_por_rango(self, precio_min, precio_max):
-        return [
-            nombre
-            for nombre, precio in self.articulos.items()
-            if precio_min <= precio <= precio_max
-        ]
-        
-artic = CarroCompras()
-artic.agregar_articulo("libro", 20)
-artic.agregar_articulo("lapiz", 5)
-print(artic.total_carrito())
-        
 # Clase InversorSecuencia que: (1) tenga método invertir_lista(lista) que retorne la lista 
 # invertida sin usar reversed() (usa manual con bucles); 
 # (2) tenga método invertir_multiples(*listas) que reutilice el anterior para invertir 
 # varias listas y retorne un diccionario {lista_original: lista_invertida}.
 
+## ======== Analisis ======== ##
+## Paso 1: Entender el problema:
+# Entrada: Se crea operaciones sobre la temperatura  celsius, fahrenheit o kelvin
+# Proceso: se empieza a encapsular celsius, exponer las 3 escalas con property y recalcular al vuelo
+# Salida: se ve el estado de la temperatura en las 3 escalas
+ 
+## Paso 2: Bosquejo
+
+
+## Paso 3: Descubrir el patrón
+
+# Solo existe un atributo real: _celsius ya que las propiedades fahrenheit y kelvin no guardan su propio valor ademas,
+# cada una tiene un getter que calcula su valor a partir de _celsius, y un setter que convierte el valor recibido y lo guarda en _celsius.
+
+# Mas importante, sin importar cuál de las tres propiedades se les asigne, siempre se termina actualizando a la misma fuente de verdad. 
+# Y como los getters recalculan cada vez que se leen, las tres escalas siempre están sincronizadas y
+# nunca puede haber un valor de Fahrenheit que no corresponda al Celsius actual.
+
+# Al tener setter en las tres que son celsius, fahrenheit, kelvin, la clase permite escribir por cualquier puerta lado
+# pero siempre llevan al mismo lugar (_celsius).
+
+## Paso 4: Escribir el código
 class InversorSecuencia:
     def invertir_lista(self, lista):
         invertida = []
@@ -107,10 +42,39 @@ class InversorSecuencia:
 secuencia = InversorSecuencia()
 secuencia.invertir_lista([1, 2, 3, 4])
 
+#### Paso 5: Prueba de escritorio
+#      Acción	                self.notas	        Salida
+# c = Calificador()	               []	              —
+# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
+# promedio()	               [80, 50, 60]	         63.33
+
+
 # Clase AnalizadorNumeros que: (1) tenga método es_par(numero) que retorne True/False;
 # (2) tenga método separar(*numeros) que retorne un diccionario {'pares': [...], 'impares': [...]} reutilizando es_par;
 # (3) tenga método cantidad_pares_impares() que retorne una tupla (cant_pares, cant_impares).
-        
+
+## ======== Analisis ======== ##
+## Paso 1: Entender el problema:
+# Entrada: Se crea operaciones sobre la temperatura  celsius, fahrenheit o kelvin
+# Proceso: se empieza a encapsular celsius, exponer las 3 escalas con property y recalcular al vuelo
+# Salida: se ve el estado de la temperatura en las 3 escalas
+ 
+## Paso 2: Bosquejo
+
+
+## Paso 3: Descubrir el patrón
+
+# Solo existe un atributo real: _celsius ya que las propiedades fahrenheit y kelvin no guardan su propio valor ademas,
+# cada una tiene un getter que calcula su valor a partir de _celsius, y un setter que convierte el valor recibido y lo guarda en _celsius.
+
+# Mas importante, sin importar cuál de las tres propiedades se les asigne, siempre se termina actualizando a la misma fuente de verdad. 
+# Y como los getters recalculan cada vez que se leen, las tres escalas siempre están sincronizadas y
+# nunca puede haber un valor de Fahrenheit que no corresponda al Celsius actual.
+
+# Al tener setter en las tres que son celsius, fahrenheit, kelvin, la clase permite escribir por cualquier puerta lado
+# pero siempre llevan al mismo lugar (_celsius).
+
+## Paso 4: Escribir el código        
 class AnalizadorNumeros:
     def __init__(self):
         self.resultado = {'pares': [], 'impares': []}
@@ -140,10 +104,39 @@ print(resul.es_par(2))
 print(resul.separar(2,3,4,5,6,7,8)) 
 print(resul.cantidad_pares_impares())
 
+#### Paso 5: Prueba de escritorio
+#      Acción	                self.notas	        Salida
+# c = Calificador()	               []	              —
+# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
+# promedio()	               [80, 50, 60]	         63.33
+
+
 # Clase GestorTemperatura que: (1) tenga método registrar_temperatura(temp) que guarde en una lista; 
 # (2) tenga método minima()`, `maxima()`, `promedio() que calculen estadísticas; 
 # (3) tenga método registrar_multiples(*temps) que reutilice el registro para varias temperaturas.
 
+## ======== Analisis ======== ##
+## Paso 1: Entender el problema:
+# Entrada: Se crea operaciones sobre la temperatura  celsius, fahrenheit o kelvin
+# Proceso: se empieza a encapsular celsius, exponer las 3 escalas con property y recalcular al vuelo
+# Salida: se ve el estado de la temperatura en las 3 escalas
+ 
+## Paso 2: Bosquejo
+
+
+## Paso 3: Descubrir el patrón
+
+# Solo existe un atributo real: _celsius ya que las propiedades fahrenheit y kelvin no guardan su propio valor ademas,
+# cada una tiene un getter que calcula su valor a partir de _celsius, y un setter que convierte el valor recibido y lo guarda en _celsius.
+
+# Mas importante, sin importar cuál de las tres propiedades se les asigne, siempre se termina actualizando a la misma fuente de verdad. 
+# Y como los getters recalculan cada vez que se leen, las tres escalas siempre están sincronizadas y
+# nunca puede haber un valor de Fahrenheit que no corresponda al Celsius actual.
+
+# Al tener setter en las tres que son celsius, fahrenheit, kelvin, la clase permite escribir por cualquier puerta lado
+# pero siempre llevan al mismo lugar (_celsius).
+
+## Paso 4: Escribir el código
 class GestorTemperatura:
 	def __init__(self):
 		self.temperaturas = []
@@ -170,111 +163,17 @@ temps = GestorTemperatura()
 temps.registrar_multiples(20,30, 40)
 print(temps.promedio())
 
-# Clase GestorPersonas que: (1) tenga método agregar_persona(nombre, edad) que guarde en un diccionario;
-# (2) tenga método personas_mayores(edad_minima) que retorne una lista de nombres cuya edad sea ≥;
-# (3) tenga método edad_promedio() que retorne el promedio de edades.
+#### Paso 5: Prueba de escritorio
+#      Acción	                self.notas	        Salida
+# c = Calificador()	               []	              —
+# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
+# promedio()	               [80, 50, 60]	         63.33
 
-class GestorPersonas:
-	def __init__(self):
-		self.personas = {}
 
-	def agregar_persona(self, nombre, edad):
-		self.personas[nombre] = edad
 
-	def personas_mayores(self, edad_minima):
-		return [
-			nombre
-			for nombre, edad in self.personas.items()
-			if edad >= edad_minima
-		]
 
-	def edad_promedio(self):
-		if not self.personas:
-			return None
-		return sum(self.personas.values()) / len(self.personas)
 
-gp = GestorPersonas()
-gp.agregar_persona("Ana", 30)
-gp.agregar_persona("Bob", 17)
-print(gp.personas_mayores(18))
 
-# Clase Equipos que: (1) tenga método crear_equipo(nombre_equipo) que inicie un equipo como una lista vacía en un diccionario; 
-# (2) tenga método agregar_jugador(equipo, jugador) que añada el jugador al equipo;
-# (3) tenga método equipo_mayor_integrantes() que retorne el nombre del equipo con más jugadores.
 
-class Equipos:
-	def __init__(self):
-		self.equipos = {}
 
-	def crear_equipo(self, nombre_equipo):
-		self.equipos[nombre_equipo] = []
-
-	def agregar_jugador(self, equipo, jugador):
-		self.equipos[equipo].append(jugador)
-
-	def equipo_mayor_integrantes(self):
-		if not self.equipos:
-			return None
-		return max(self.equipos, key=lambda equipo: len(self.equipos[equipo]))
-
-eq = Equipos()
-eq.crear_equipo("A")
-eq.agregar_jugador("A","Juan")
-eq.agregar_jugador("A","Pedro")
-
-# Clase AnalizadorString que: (1) tenga método solo_vocales(letra) que retorne True si es vocal;
-# (2) tenga método contar_por_tipo(texto) que retorne un diccionario 
-# {'vocales': cant, 'consonantes': cant, 'digitos': cant} reutilizando métodos; 
-# (3) tenga atributo que guarde el texto más largo analizado.
-class AnalizadorString:
-	def __init__(self):
-		self.texto_mas_largo = ''
-
-	def solo_vocales(self, letra):
-		return letra.lower() in 'aeiou'
-
-	def contar_por_tipo(self, texto):
-		if len(texto) > len(self.texto_mas_largo):
-			self.texto_mas_largo = texto
-
-		conteo = {'vocales': 0, 'consonantes': 0, 'digitos': 0}
-		for caracter in texto:
-			if caracter.isdigit():
-				conteo['digitos'] += 1
-			elif caracter.isalpha():
-				if self.solo_vocales(caracter):
-					conteo['vocales'] += 1
-				else:
-					conteo['consonantes'] += 1
-		return conteo
-
-astr = AnalizadorString()
-astr.contar_por_tipo("Hola123")
-
-# Clase Tareas que: (1) tenga método agregar_tarea(descripcion, prioridad) que guarde en una lista de tuplas (descripción, prioridad); 
-# (2) tenga método tareas_prioritarias() que retorne solo las de prioridad alta;
-# (3) tenga método eliminar_completada(descripcion) que borre la tarea de la lista.
-class Tareas:
-	def __init__(self):
-		self.tareas = []
-
-	def agregar_tarea(self, descripcion, prioridad):
-		self.tareas.append((descripcion, prioridad))
-
-	def tareas_prioritarias(self):
-		return [
-			tarea for tarea in self.tareas
-			if tarea[1].lower() == 'alta'
-		]
-
-	def eliminar_completada(self, descripcion):
-		self.tareas = [
-			tarea for tarea in self.tareas
-			if tarea[0] != descripcion
-		]
-
-t = Tareas()
-t.agregar_tarea("Estudiar", "alta")
-t.agregar_tarea("Leer", "baja")
-t.tareas_prioritarias()
 
