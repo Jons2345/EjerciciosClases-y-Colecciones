@@ -51,6 +51,24 @@ pal.agregar_multiples("joel", "ana", "joel")
 print(pal.lista)
 print(pal.contar_palabras())
 
+# Línea por línea (fragmentos clave)
+
+# self.palabras = set()	             
+# Estructura para evitar duplicados: un elemento repetido no se vuelve a guardar.
+
+# if palabra not in self.palabras:	 
+# El operador in comprueba pertenencia antes de agregar.
+
+# self.palabras.add(palabra)	     
+# Método de set: agrega sin permitir repetidos.
+
+# self.lista.append(palabra)	     
+# Método de lista: conserva el orden real de llegada.
+
+# self.agregar_palabra(palabra)	     
+# Reutilización: agregar_multiples llama a agregar_palabra por cada elemento de *args.
+
+
 #### Paso 5: Prueba de escritorio
 #      Acción	                        self.notas	        Salida
 # a = AnalizadorTexto()	                 set()	             []

@@ -63,6 +63,24 @@ print(codi.codificar_palabra("Hola Mundo", 3))
 print(codi.codificar_palabra("Krod Pxqgr", -3))   
 codi.mostrar_historial()
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# letra.isascii() and letra.isalpha()
+# Solo se codifican letras A–Z; espacios y símbolos pasan igual.
+
+# ord(letra) - base
+# Convierte la letra a su posición 0–25.
+
+# (posicion + desplazamiento) % 26
+# Suma el desplazamiento y da la vuelta al alfabeto.
+
+# chr(base + nueva_posicion)
+# Convierte la nueva posición otra vez a letra.
+
+# self.historial[(palabra, desplazamiento)] = resultado
+# Guarda la codificación con una tupla como clave.
+
+
 #### Paso 5: Prueba de escritorio
 
 

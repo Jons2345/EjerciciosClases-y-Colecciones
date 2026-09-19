@@ -56,6 +56,23 @@ Calificacion = Calificador()
 print(Calificacion.cargar_notas(80, 50, 60))
 print (Calificacion.promedio())
 
+# Línea por línea (fragmentos clave)
+
+# return 0 <= nota <= 100	         
+# Operador relacional encadenado: valida el rango completo en una sola expresión.
+
+# for nota in args:	   
+# *args llega como tupla; se recorre con un for para procesar cada nota.
+
+# if self.validar_nota(nota)
+# Reutilización: cargar_notas llama a validar_nota antes de guardar.
+
+# self.notas.append(nota)	          
+# Método de lista: agrega solo las notas que pasaron la validación.
+
+# sum(self.notas) / len(self.notas)	 
+# Funciones nativas que calculan el promedio sobre la lista acumulada.
+
 #### Paso 5: Prueba de escritorio
 #      Acción	                self.notas	        Salida
 # c = Calificador()	               []	              —

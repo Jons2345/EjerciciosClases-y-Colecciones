@@ -66,6 +66,24 @@ print(f.es_perfecto(12))
 print(f.encontrar_multiples_divisores(6, 12, 15))
 
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# range(1, numero + 1)
+# Recorre de 1 hasta numero, ambos incluidos.
+
+# if numero % i == 0:
+# Si el residuo es 0, i divide exactamente al número.
+
+# return tuple(divisor)
+# Convierte la lista de divisores en tupla.
+
+# sum(divisor) - numero
+# Suma todos los divisores y resta el número para quedarse con los propios.
+
+# resultado[n] = self.encontrar_divisores(n)
+# Reutiliza el método para cada número y lo guarda en el diccionario.
+
+
 #### Paso 5: Prueba de escritorio
 
 # ACCIÓN	                      DIVISORES	      SUMA − NÚMERO	         SALIDA

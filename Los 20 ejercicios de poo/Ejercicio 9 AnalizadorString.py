@@ -63,6 +63,21 @@ class AnalizadorString:
 astr = AnalizadorString()
 astr.contar_por_tipo("Hola123")
 
+# Línea por línea (fragmentos clave)
+
+# return letra.lower() in 'aeiou'	             
+# Normaliza con .lower() y usa el operador in para comprobar si es vocal.
+
+# if len(texto) > len(self.texto_mas_largo):	 
+# Compara longitudes para actualizar el atributo de estado texto_mas_largo.
+
+# caracter.isdigit() / caracter.isalpha()	   
+# Métodos de string que clasifican cada carácter antes de contarlo.
+
+# if self.solo_vocales(caracter):	             
+# Reutilización: contar_por_tipo llama a solo_vocales para decidir el contador a incrementar.
+
+
 #### Paso 5: Prueba de escritorio
 
 # Carácter	      Tipo	                    conteo

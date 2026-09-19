@@ -46,6 +46,21 @@ class InversorSecuencia:
 secuencia = InversorSecuencia()
 secuencia.invertir_lista([1, 2, 3, 4])
 
+# Línea por línea (fragmentos clave)
+
+# for i in range(len(lista) - 1, -1, -1):	
+# Recorre los índices desde el último hasta 0, con paso -1 (sin usar reversed()).
+
+# invertida.append(lista[i])	            
+# Toma cada elemento en orden inverso y lo agrega a la nueva lista.
+
+# resultado[tuple(lista)] = ...	            
+# Convierte la lista en tupla porque las listas no pueden ser llaves de diccionario.
+
+# self.invertir_lista(lista)	            
+# Reutilización: invertir_multiples llama a invertir_lista por cada lista recibida.
+
+
 #### Paso 5: Prueba de escritorio
 
 # i	    lista[i]	invertida

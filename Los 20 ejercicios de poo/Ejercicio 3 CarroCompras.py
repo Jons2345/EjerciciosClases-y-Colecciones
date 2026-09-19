@@ -48,6 +48,20 @@ artic = CarroCompras()
 artic.agregar_articulo("libro", 20)
 artic.agregar_articulo("lapiz", 5)
 print(artic.total_carrito())
+
+# Línea por línea (fragmentos clave)
+
+# self.articulos[nombre] = precio	              
+# Asignación a diccionario: crea la llave si no existe, o sobreescribe el precio si ya existía.
+
+# sum(self.articulos.values())	                  
+# .values() extrae solo los precios (sin los nombres) para sumarlos.
+
+# for nombre, precio in self.articulos.items():	  
+# .items() desempaqueta cada par clave/valor en la comprensión de lista.
+
+# if precio_min <= precio <= precio_max	         
+# Comparación encadenada: filtra los artículos dentro del rango.
         
 #### Paso 5: Prueba de escritorio
 

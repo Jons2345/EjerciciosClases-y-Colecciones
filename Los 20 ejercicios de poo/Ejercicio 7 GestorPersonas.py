@@ -53,6 +53,20 @@ gp.agregar_persona("Ana", 30)
 gp.agregar_persona("Bob", 17)
 print(gp.personas_mayores(18))
 
+# Línea por línea (fragmentos clave)
+
+# self.personas[nombre] = edad	                     
+# Asignación a diccionario: guarda o actualiza la edad de una persona.
+
+# for nombre, edad in self.personas.items():	      
+# .items() desempaqueta nombre y edad dentro de la comprensión de lista.
+
+# if edad >= edad_minima	                         
+# Filtro con operador relacional: solo pasan las personas que cumplen la edad mínima.
+
+# sum(self.personas.values()) / len(self.personas)	  
+# Calcula el promedio de edades sobre los valores del diccionario.
+
 #### Paso 5: Prueba de escritorio
 # Acción	                    self.personas	          Salida
 # gp = GestorPersonas()	            {}	                   —

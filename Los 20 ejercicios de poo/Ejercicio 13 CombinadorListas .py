@@ -49,6 +49,23 @@ class CombinadorListas:
 combinador = CombinadorListas()
 print(combinador.intercalar([1,3], [2,4]))
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# max((len(l) for l in listas), default=0)
+# Obtiene el largo de la lista más larga (0 si no hay listas).
+
+# for i in range(largo_maximo):
+# Recorre cada posición posible.
+
+# for lista in listas:
+# En cada posición, pasa por todas las listas en orden.
+
+# if i < len(lista):
+# Verifica que la lista todavía tenga elemento en esa posición.
+
+# return self.intercalar_multiples(...)
+# intercalar reutiliza el método general con dos listas.
+
 #### Paso 5: Prueba de escritorio
 
 # i	     LISTA	        ¿i < len?	     RESULTADO

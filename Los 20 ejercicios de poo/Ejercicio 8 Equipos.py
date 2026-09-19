@@ -51,6 +51,20 @@ eq.crear_equipo("A")
 eq.agregar_jugador("A","Juan")
 eq.agregar_jugador("A","Pedro")
 
+
+# Línea por línea (fragmentos clave)
+
+
+# self.equipos[nombre_equipo] = []	
+# Inicializa una lista vacía como valor dentro del diccionario: es un diccionario de listas.
+
+# self.equipos[equipo].append(jugador)	
+# Accede a la lista guardada en esa llave y agrega el jugador ahí.
+
+# max(self.equipos, key=lambda equipo: len(self.equipos[equipo]))	
+# max() con key compara cada equipo por la cantidad de jugadores, sin necesitar un for explícito.
+
+
 #### Paso 5: Prueba de escritorio
 
 # Acción	                      self.equipos	            Salida

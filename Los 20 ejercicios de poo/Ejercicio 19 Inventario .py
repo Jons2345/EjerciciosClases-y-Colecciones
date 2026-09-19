@@ -65,6 +65,23 @@ print(inv.restar_stock("kiwi", 1))
 print(inv.stock)                      
 print(inv.productos_bajo_stock(5))
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# self.stock[producto] += cantidad
+# Suma la cantidad al stock existente.
+
+# producto in self.stock and ...
+# Primero verifica que exista; el and corta si es falso.
+
+# self.stock[producto] >= cantidad
+# Verifica que haya suficiente para restar.
+
+# return True / return False
+# Informa si la operación se realizó o no.
+
+# if cantidad < minimo:
+# Selecciona productos con stock menor al mínimo.
+
 #### Paso 5: Prueba de escritorio
 
 # ACCIÓN	                        STOCK	            SALIDA

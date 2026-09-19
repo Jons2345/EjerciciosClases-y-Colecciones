@@ -66,6 +66,23 @@ print(calc.distancia_euclidiana((0, 0), (3, 4)))
 print(calc.punto_mas_cercano((0, 0), (5, 5), (1, 1), (3, 4)))  
 print(calc.distancias) 
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# x1, y1 = p1
+# Desempaqueta la tupla en sus dos coordenadas.
+
+# math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+# Fórmula de la distancia euclidiana.
+
+# self.distancias.append(distancia)
+# Guarda cada distancia calculada en el historial.
+
+# for punto in puntos[1:]:
+# Recorre desde el segundo punto (el primero ya es el candidato).
+
+# if d < menor_distancia:
+# Si encuentra uno más cerca, actualiza distancia y punto.
+
 #### Paso 5: Prueba de escritorio
 
 # EDAD	              CATEGORÍA	               GRUPOS

@@ -72,6 +72,23 @@ registro.registrar("emilia", 60)
 
 print(registro.mejor_estudiante())
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# self.notas[estudiante] = nota
+# Guarda o actualiza la nota de ese estudiante.
+
+# for estudiante, nota in self.notas.items():
+# Recorre cada par nombre/nota del diccionario.
+
+# if nota >= nota_minima:
+# Condición de aprobado (incluye la nota mínima exacta).
+
+# mejor_nota = -1
+# Valor inicial menor que cualquier nota posible.
+
+# return mejor_nombre, mejor_nota
+# Retorna dos valores; Python los empaqueta en una tupla.
+
 #### Paso 5: Prueba de escritorio
 
 # ESTUDIANTE	    NOTA	   ¿nota > mejor_nota?	    MEJOR (nombre, nota)

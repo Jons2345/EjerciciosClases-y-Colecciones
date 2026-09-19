@@ -46,6 +46,24 @@ class SelectorRango:
 selector = SelectorRango()
 print(selector.elementos_en_multiples_rangos((1, 5), (2, 8)))
 
+
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# tuple(range(inicio, fin))
+# Genera los números de inicio a fin-1 y los guarda en una tupla.
+
+# def ...(self, *rangos):
+# Captura cualquier cantidad de tuplas como una tupla de tuplas.
+
+# for inicio, fin in rangos:
+# Desempaqueta cada tupla (inicio, fin) en dos variables.
+
+# multiples_rangos.update(numeros)
+# Agrega todos los números al conjunto; los repetidos se ignoran.
+
+# return list(multiples_rangos)
+# Convierte el conjunto en lista para retornarlo.
+
 #### Paso 5: Prueba de escritorio
 
 # ACCIÓN	                                CONJUNTO	       SALIDA

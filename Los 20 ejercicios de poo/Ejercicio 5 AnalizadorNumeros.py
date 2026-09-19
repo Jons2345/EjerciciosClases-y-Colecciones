@@ -63,6 +63,22 @@ print(resul.es_par(2))
 print(resul.separar(2,3,4,5,6,7,8)) 
 print(resul.cantidad_pares_impares())
 
+
+# Línea por línea (fragmentos clave)
+
+# return numero % 2 == 0	            
+# Operador módulo: si el resto de dividir entre 2 es 0, el número es par.
+
+# if self.es_par(numero): pares.append(numero)               
+# Reutilización: separar llama a es_par para decidir en qué lista guardar cada número.
+
+# self.resultado = {'pares': pares, 'impares': impares}
+# Guarda el resultado como atributo, para que otro método lo use sin recorrer todo de nuevo.
+	
+# return (cant_par, cant_impar)	       
+# Retorna una tupla: un par de valores fijos e inmutables.
+
+
 #### Paso 5: Prueba de escritorio
 
 # Acción	                 self.resultado	                          Salida

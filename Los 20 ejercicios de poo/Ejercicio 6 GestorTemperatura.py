@@ -58,6 +58,20 @@ temps = GestorTemperatura()
 temps.registrar_multiples(20,30, 40)
 print(temps.promedio())
 
+# Línea por línea (fragmentos clave)
+
+# self.temperaturas.append(temp)	                        
+# Guarda cada temperatura registrada en la lista interna.
+
+# min(self.temperaturas) if self.temperaturas else None	    
+# Evita el error de min() sobre una lista vacía, retornando None en ese caso.
+
+# sum(self.temperaturas) / len(self.temperaturas)	        
+# Calcula el promedio con funciones nativas de agregación.
+
+# self.registrar_temperatura(temp)	                        
+# Reutilización: registrar_multiples llama a registrar_temperatura por cada valor de *temps.
+
 #### Paso 5: Prueba de escritorio
 # Acción	                       self.temperaturas	Salida
 # t = GestorTemperatura()	        []	                  —

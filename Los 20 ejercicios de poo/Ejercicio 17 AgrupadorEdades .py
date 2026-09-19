@@ -68,6 +68,23 @@ print(a.edad_promedio_categoria("adulto"))
 print(a.edad_promedio_categoria("niño"))     
 print(a.edad_promedio_categoria("mayor"))    
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# raise ValueError(...)
+# Detiene el método con un error si la edad es negativa.
+
+# elif edad < 18:
+# Solo llega aquí si edad ≥ 12, por eso basta con el límite superior.
+
+# if categoria not in self.grupos:
+# Si la categoría aún no existe, crea su lista vacía.
+
+# self.grupos[categoria].append(edad)
+# Agrega la edad a la lista de su categoría.
+
+# sum(edades) / len(edades)
+# Promedio: suma de edades dividida entre la cantidad.
+
 #### Paso 5: Prueba de escritorio
 
 # EDAD	              CATEGORÍA	               GRUPOS

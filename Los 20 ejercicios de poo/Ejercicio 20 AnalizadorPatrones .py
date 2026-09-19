@@ -80,6 +80,23 @@ print(analizador.agrupar_por_longitud(texto))
 print(analizador.palabras_unicas())
 
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# re.findall(r"\w+", texto.lower())
+# Pasa a minúscula y extrae solo secuencias de letras/números.
+
+# p.startswith(patron)
+# True si la palabra empieza con el patrón.
+
+# [p for p in palabras if ...]
+# Lista por comprensión: filtro en una sola línea.
+
+# grupos[longitud].append(palabra)
+# Agrega la palabra a la lista de su longitud.
+
+# set(self.palabras)
+# Convierte la lista en conjunto: sin repetidos.
+
 #### Paso 5: Prueba de escritorio
 
 # PALABRA	      longitud	        ¿empieza con 'ca'?	          GRUPOS

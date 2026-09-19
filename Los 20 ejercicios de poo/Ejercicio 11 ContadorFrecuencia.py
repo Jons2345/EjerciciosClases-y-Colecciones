@@ -64,6 +64,23 @@ contador.agregar_elemento("banana")
 
 print(contador.frecuencias)
 
+# LÍNEA POR LÍNEA (FRAGMENTOS CLAVE)
+
+# self.frecuencias = {}
+# Constructor: crea el diccionario vacío donde se guardan los conteos.
+
+# if elemento in self.frecuencias:
+# Pregunta si el elemento ya es una clave del diccionario.
+
+# self.frecuencias[elemento] += 1
+# Si ya existía, aumenta su contador en uno.
+
+# max(self.frecuencias, key=self.frecuencias.get)
+# Devuelve la clave cuyo valor (conteo) es el mayor.
+
+# self.frecuencias.get(elemento, 0)
+# Busca la clave; si no existe, retorna 0 en lugar de fallar.
+
 #### Paso 5: Prueba de escritorio
 
 # ACCIÓN	                     FRECUENCIAS	                      SALIDA

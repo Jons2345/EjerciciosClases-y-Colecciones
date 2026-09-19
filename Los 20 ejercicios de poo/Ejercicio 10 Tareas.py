@@ -57,6 +57,18 @@ t.agregar_tarea("Estudiar", "alta")
 t.agregar_tarea("Leer", "baja")
 t.tareas_prioritarias()
 
+# Línea por línea (fragmentos clave)
+
+# self.tareas.append((descripcion, prioridad))	   
+# Guarda una tupla con dos datos relacionados dentro de la lista de tareas.
+
+# if tarea[1].lower() == 'alta'	
+# Accede al segundo elemento de la tupla (la prioridad) para filtrar.
+
+# if tarea[0] != descripcion	
+# Accede al primer elemento (la descripción) y reconstruye la lista excluyendo la tarea que coincide.
+
+
 #### Paso 5: Prueba de escritorio
 # Acción	                              self.tareas	          Salida
 # t = Tareas()	                               []	                —
