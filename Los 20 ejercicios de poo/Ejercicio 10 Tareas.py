@@ -58,7 +58,10 @@ t.agregar_tarea("Leer", "baja")
 t.tareas_prioritarias()
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+# Acción	                              self.tareas	          Salida
+# t = Tareas()	                               []	                —
+# agregar_tarea("Estudiar","alta")	  [('Estudiar','alta')]  	    —
+# agregar_tarea("Leer","baja")	      [('Estudiar','alta'),         —
+#                                     ('Leer','baja')] 
+# tareas_prioritarias()	                 sin cambio	          [('Estudiar','alta')]
+# eliminar_completada("Leer")	      [('Estudiar','alta')]	        —

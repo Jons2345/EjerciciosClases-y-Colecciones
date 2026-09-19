@@ -52,7 +52,10 @@ eq.agregar_jugador("A","Juan")
 eq.agregar_jugador("A","Pedro")
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+
+# Acción	                      self.equipos	            Salida
+# eq = Equipos()	                  {}	                  —
+# crear_equipo("A")     	      {'A': []}	                  —
+# agregar_jugador("A","Juan")	  {'A': ['Juan']}	          —
+# agregar_jugador("A","Pedro")	  {'A': ['Juan','Pedro']}	  —
+# equipo_mayor_integrantes()	  sin cambio	             "A"

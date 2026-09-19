@@ -50,7 +50,10 @@ artic.agregar_articulo("lapiz", 5)
 print(artic.total_carrito())
         
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+
+# Acción	                       self.articulos	            Salida
+# c = CarroCompras()	                 {}	                      —
+# agregar_articulo("libro", 20)	   {'libro': 20}	              —
+# agregar_articulo("lapiz", 5)	   {'libro': 20, 'lapiz': 5}	  —
+# total_carrito()	                sin cambio	                  25
+# articulos_por_rango(1, 10)	    sin cambio	                ['lapiz']

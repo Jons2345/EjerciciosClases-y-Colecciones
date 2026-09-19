@@ -47,7 +47,9 @@ secuencia = InversorSecuencia()
 secuencia.invertir_lista([1, 2, 3, 4])
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+
+# i	    lista[i]	invertida
+# 3	       4	     [4]
+# 2	       3	     [4, 3]
+# 1	       2	     [4, 3, 2]
+# 0	       1	     [4, 3, 2, 1]

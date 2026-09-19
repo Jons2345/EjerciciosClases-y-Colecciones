@@ -64,7 +64,10 @@ astr = AnalizadorString()
 astr.contar_por_tipo("Hola123")
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+
+# Carácter	      Tipo	                    conteo
+# H	             consonante	    {'vocales':0,'consonantes':1,'digitos':0}
+# o	             vocal	        {'vocales':1,'consonantes':1,'digitos':0}
+# l          	 consonante	    {'vocales':1,'consonantes':2,'digitos':0}
+# a	             vocal	        {'vocales':2,'consonantes':2,'digitos':0}
+# 1,2,3	         dígitos	    {'vocales':2,'consonantes':2,'digitos':3}

@@ -59,7 +59,9 @@ temps.registrar_multiples(20,30, 40)
 print(temps.promedio())
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+# Acción	                       self.temperaturas	Salida
+# t = GestorTemperatura()	        []	                  —
+# registrar_multiples(20,30,40)  	[20, 30, 40]	      —
+# minima()	                        sin cambio	          20
+# maxima()	                        sin cambio	          40
+# promedio()	                    sin cambio	         30.0

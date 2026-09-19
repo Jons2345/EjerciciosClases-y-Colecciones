@@ -64,7 +64,9 @@ print(resul.separar(2,3,4,5,6,7,8))
 print(resul.cantidad_pares_impares())
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+
+# Acción	                 self.resultado	                          Salida
+# a = AnalizadorNumeros()	{'pares':[], 'impares':[]}	                 —
+# es_par(2)	                 sin cambio	                               True
+# separar(2,3,4,5,6,7,8)	{'pares':[2,4,6,8], 'impares':[3,5,7]}	  igual al diccionario
+# cantidad_pares_impares()	 sin cambio	                                (4, 3)

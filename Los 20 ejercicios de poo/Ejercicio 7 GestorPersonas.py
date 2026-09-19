@@ -54,7 +54,9 @@ gp.agregar_persona("Bob", 17)
 print(gp.personas_mayores(18))
 
 #### Paso 5: Prueba de escritorio
-#      Acción	                self.notas	        Salida
-# c = Calificador()	               []	              —
-# cargar_notas(80, 50, 60)	   [80, 50, 60]	      [80, 50, 60]
-# promedio()	               [80, 50, 60]	         63.33
+# Acción	                    self.personas	          Salida
+# gp = GestorPersonas()	            {}	                   —
+# agregar_persona("Ana", 30)    {'Ana': 30}	               —
+# agregar_persona("Bob", 17)	{'Ana': 30, 'Bob': 17}	   —
+# personas_mayores(18)	         sin cambio	             ['Ana']
+# edad_promedio()	             sin cambio            	  23.5
